@@ -74,9 +74,7 @@ module.exports = {
         });
     },
     deleteUser: (req, res, cb) => {
-        console.log(req.body.id)
         User.findByIdAndDelete(req.body.id, (err, user) => {
-            console.log(err,  user)
             if (!user) {
                 cb({ success: false, message: "Error while removing user" }, null);
             } else {
